@@ -7,6 +7,6 @@ function! zip_lines#ZipRange() range abort
     let lower_half = getline(centerline+1, a:lastline)
     execute (centerline+1).";".a:lastline."d"
     for i in range(len(lower_half))
-        call setline(a:firstline+i, upper_half[i] . lower_half[i])
+        call setline(a:firstline+i, upper_half[i] ." ". lower_half[i])
     endfor
 endfunction
